@@ -197,6 +197,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@rushstack/eslint-patch@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
+  integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -311,7 +316,7 @@
     "@types/mime" "*"
     "@types/node" "*"
 
-"@typescript-eslint/eslint-plugin@^5.10.0":
+"@typescript-eslint/eslint-plugin@^5.0.0", "@typescript-eslint/eslint-plugin@^5.10.0":
   version "5.40.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.40.0.tgz#0159bb71410eec563968288a17bd4478cdb685bd"
   integrity sha512-FIBZgS3DVJgqPwJzvZTuH4HNsZhHMa9SjxTKAZTlMsPw/UzpEjcf9f4dfgDJEHjK+HboUJo123Eshl6niwEm/Q==
@@ -325,7 +330,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.10.0":
+"@typescript-eslint/parser@^5.0.0", "@typescript-eslint/parser@^5.10.0":
   version "5.40.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.40.0.tgz#432bddc1fe9154945660f67c1ba6d44de5014840"
   integrity sha512-Ah5gqyX2ySkiuYeOIDg7ap51/b63QgWZA7w6AHtFrag7aH0lRQPbLzUjk0c9o5/KZ6JRkTTDKShL4AUrQa6/hw==
@@ -443,6 +448,15 @@
   version "6.4.4"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.4.4.tgz#0b024fc8ca91bb4b6035abaf53c5aecc17119b3b"
   integrity sha512-Ku31WzpOV/8cruFaXaEZKF81WkNnvCSlBY4eOGtz5WMSdJvX1v1WWlSMGZeqUwPtQ27ZZz7B62erEMq8JDjcXw==
+
+"@vue/eslint-config-typescript@^11.0.2":
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/@vue/eslint-config-typescript/-/eslint-config-typescript-11.0.2.tgz#03353f404d4472900794e653450bb6623de3c642"
+  integrity sha512-EiKud1NqlWmSapBFkeSrE994qpKx7/27uCGnhdqzllYDpQZroyX/O6bwjEpeuyKamvLbsGdO6PMR2faIf+zFnw==
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^5.0.0"
+    "@typescript-eslint/parser" "^5.0.0"
+    vue-eslint-parser "^9.0.0"
 
 "@vue/reactivity-transform@3.2.40":
   version "3.2.40"
@@ -3359,7 +3373,7 @@ vue-demi@*:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
   integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
 
-vue-eslint-parser@^9.0.1:
+vue-eslint-parser@^9.0.0, vue-eslint-parser@^9.0.1:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.1.0.tgz#0e121d1bb29bd10763c83e3cc583ee03434a9dd5"
   integrity sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==
