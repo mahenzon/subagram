@@ -76,26 +76,24 @@ module.exports = {
     // 'no-shadow': 'off',
     // '@typescript-eslint/no-shadow': 'error',
     //
-    // 'import/first': 'off',
-    // 'import/named': 'error',
-    // 'import/namespace': 'error',
-    // 'import/default': 'error',
-    // 'import/export': 'error',
-    // 'import/extensions': 'off',
-    // 'import/no-unresolved': 'off',
-    // 'import/no-extraneous-dependencies': 'off',
-    // 'import/prefer-default-export': 'off',
+    'import/first': 'off',
+    'import/named': 'error',
+    'import/namespace': 'error',
+    'import/default': 'error',
+    'import/export': 'error',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
     //
     // 'prefer-promise-reject-errors': 'off',
-    //
-    // quotes: ['error', 'single', { avoidEscape: true }],
     //
     // // this rule, if on, would require explicit return type on the `render` function
     // '@typescript-eslint/explicit-function-return-type': 'off',
     //
-    // // in plain CommonJS modules, you can't use `import foo = require('foo')`
-    // //  to pass this rule, so it has to be disabled
-    // '@typescript-eslint/no-var-requires': 'off',
+    // in plain CommonJS modules, you can't use `import foo = require('foo')`
+    //  to pass this rule, so it has to be disabled
+    '@typescript-eslint/no-var-requires': 'off',
     //
     // // The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
     // // does not work with type definitions
@@ -105,6 +103,14 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
     // author-preffered
+    // 'import/extensions': [
+    //   'error',
+    //   'ignorePackages',
+    //   {
+    //     js: 'never',
+    //     ts: 'never',
+    //   },
+    // ],
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'always-multiline'],
     'array-element-newline': [

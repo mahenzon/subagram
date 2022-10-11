@@ -5,14 +5,14 @@
       active
       :todos="todos"
       :meta="meta"
-    ></example-component>
+    />
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { ref } from 'vue';
+import { Todo, Meta } from 'components/models'
+import ExampleComponent from 'components/ExampleComponent.vue'
+import { ref } from 'vue'
 
 const todos = ref<Todo[]>([
   {
@@ -35,8 +35,8 @@ const todos = ref<Todo[]>([
     id: 5,
     content: 'ct5',
   },
-]);
+])
 const meta = ref<Meta>({
   totalCount: 1200,
-});
+})
 </script>

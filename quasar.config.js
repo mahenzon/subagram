@@ -11,8 +11,8 @@
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 
-const { configure } = require('quasar/wrappers');
-const path = require('path');
+const { configure } = require('quasar/wrappers')
+const path = require('path')
 
 module.exports = configure((/* ctx */) => ({
   eslint: {
@@ -214,4 +214,4 @@ module.exports = configure((/* ctx */) => ({
     // extendBexScriptsConf (esbuildConf) {}
     // extendBexManifestJson (json) {}
   },
-}));
+}))
