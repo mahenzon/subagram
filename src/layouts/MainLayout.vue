@@ -6,10 +6,10 @@ import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue'
 
 const essentialLinks: EssentialLinkProps[] = [
   {
-    title: 'nav.docs.title',
-    caption: 'nav.docs.caption',
-    icon: 'school',
-    link: 'https://quasar.dev',
+    title: 'nav.createWord.title',
+    caption: 'nav.createWord.caption',
+    icon: 'create',
+    to: { name: '' },
   },
 ]
 
@@ -73,7 +73,6 @@ const localeOptions = reactive([
           v-model="locale"
           :options="localeOptions"
           dense
-          borderless
           emit-value
           map-options
           options-dense

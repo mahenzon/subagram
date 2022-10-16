@@ -4,11 +4,13 @@ export interface EssentialLinkProps {
   caption?: string;
   link?: string;
   icon?: string;
+  target?: string;
 }
 withDefaults(defineProps<EssentialLinkProps>(), {
   caption: '',
   link: '#',
   icon: '',
+  target: undefined,
 })
 </script>
 
@@ -16,7 +18,7 @@ withDefaults(defineProps<EssentialLinkProps>(), {
   <q-item
     clickable
     tag="a"
-    target="_blank"
+    :target="target"
     :href="link"
   >
     <q-item-section
