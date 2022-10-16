@@ -12,5 +12,27 @@ import WordCard from './WordCard.vue'
       :word="'Hello ' + n"
       :words-count="n"
     />
+
+    <!-- Navigation below -->
+    <q-page-sticky
+      position="bottom-right"
+      :offset="[18, 18]"
+    >
+      <q-btn
+        fab
+        :to="{ name: 'create-word' }"
+        size="lg"
+        color="accent"
+        icon="create"
+      />
+    </q-page-sticky>
+
+    <q-page-scroller position="bottom">
+      <q-btn
+        fab
+        icon="keyboard_arrow_up"
+        color="secondary"
+      />
+    </q-page-scroller>
   </div>
 </template>
