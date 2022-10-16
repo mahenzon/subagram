@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
         name: 'create-word',
         component: () => import('pages/CreateWord.vue'),
       },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('pages/AboutPage.vue'),
+      },
     ],
   },
 

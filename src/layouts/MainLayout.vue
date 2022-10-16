@@ -11,6 +11,12 @@ const toolbarLinks: ToolbarListLinkProps[] = [
     icon: 'create',
     to: { name: 'create-word' },
   },
+  {
+    title: 'nav.about.title',
+    caption: 'nav.about.caption',
+    icon: 'help',
+    to: { name: 'about' },
+  },
 ]
 
 const leftDrawerOpen = ref(false)
