@@ -15,7 +15,7 @@ withDefaults(defineProps<WordCardProps>(), {
       <div class="text-h6">
         {{ word }}
       </div>
-      <div class="text-subtitle2 text-dark">
+      <div class="text-subtitle2">
         {{ $t('wordCard.foundCount', wordsCount) }}
       </div>
     </q-card-section>

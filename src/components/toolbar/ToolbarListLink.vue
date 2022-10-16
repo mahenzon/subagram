@@ -2,7 +2,7 @@
 export interface ToolbarListLink {
   title: string;
   caption?: string;
-  link?: string;
+  to: { name: string };
   icon?: string;
   target?: string;
 }
@@ -19,7 +19,7 @@ withDefaults(defineProps<ToolbarListLink>(), {
     clickable
     tag="a"
     :target="target"
-    :href="link"
+    :to="to"
   >
     <q-item-section
       v-if="icon"

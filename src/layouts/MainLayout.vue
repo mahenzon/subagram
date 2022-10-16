@@ -9,7 +9,7 @@ const toolbarLinks: ToolbarListLinkProps[] = [
     title: 'nav.createWord.title',
     caption: 'nav.createWord.caption',
     icon: 'create',
-    to: { name: '' },
+    to: { name: 'create-word' },
   },
 ]
 
@@ -40,7 +40,12 @@ const localeOptions = reactive([
         />
 
         <q-toolbar-title>
-          {{ $t('app.title') }}
+          <q-btn
+            flat
+            :to="{ name: 'index' }"
+          >
+            {{ $t('app.title') }}
+          </q-btn>
         </q-toolbar-title>
 
         <q-btn
