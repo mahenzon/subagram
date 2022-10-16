@@ -27,9 +27,9 @@ withDefaults(defineProps<EssentialLinkProps>(), {
     </q-item-section>
 
     <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
+      <q-item-label>{{ $t(title) }}</q-item-label>
       <q-item-label caption>
-        {{ caption }}
+        {{ $t(caption) }}
       </q-item-label>
     </q-item-section>
   </q-item>

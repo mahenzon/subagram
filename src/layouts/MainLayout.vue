@@ -1,7 +1,35 @@
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue'
+
+const essentialLinks: EssentialLinkProps[] = [
+  {
+    title: 'nav.docs.title',
+    caption: 'nav.docs.caption',
+    icon: 'school',
+    link: 'https://quasar.dev',
+  },
+]
+
+const leftDrawerOpen = ref(false)
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value
+}
+
+const { locale } = useI18n({ useScope: 'global' })
+const localeOptions = reactive([
+  { value: 'en-US', label: '🇬🇧 English' },
+  { value: 'ru-RU', label: '🇷🇺 Русский' },
+])
+</script>
+
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-secondary">
         <q-btn
           flat
           dense
@@ -12,10 +40,16 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          {{ $t('app.title') }}
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn
+          flat
+          dense
+          round
+          icon="account_circle"
+          @click="$q.notify($t('WIP'))"
+        />
       </q-toolbar>
     </q-header>
 
@@ -25,16 +59,25 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
+        <q-item-label header>
+          {{ $t('nav.title') }}
         </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
+        />
+
+        <q-select
+          v-model="locale"
+          :options="localeOptions"
+          dense
+          borderless
+          emit-value
+          map-options
+          options-dense
+          :label="$t('languageSelector.title')"
         />
       </q-list>
     </q-drawer>
@@ -44,59 +87,3 @@
     </q-page-container>
   </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue'
-
-const essentialLinks: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-]
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
-</script>

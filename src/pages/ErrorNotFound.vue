@@ -1,5 +1,9 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div class="fullscreen bg-secondary text-white text-center q-pa-md flex flex-center">
     <div>
       <div style="font-size: 30vh">
         404
@@ -17,14 +21,10 @@
         color="white"
         text-color="blue"
         unelevated
-        to="/"
+        :to="{ name: 'index' }"
         label="Go Home"
         no-caps
       />
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-
-</script>
