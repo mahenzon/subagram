@@ -1,12 +1,12 @@
 <script setup lang="ts">
-export interface EssentialLinkProps {
+export interface ToolbarListLink {
   title: string;
   caption?: string;
   link?: string;
   icon?: string;
   target?: string;
 }
-withDefaults(defineProps<EssentialLinkProps>(), {
+withDefaults(defineProps<ToolbarListLink>(), {
   caption: '',
   link: '#',
   icon: '',

@@ -2,9 +2,9 @@
 import { ref, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue'
+import ToolbarListLink, { ToolbarListLinkProps } from 'components/toolbar/ToolbarListLink.vue'
 
-const essentialLinks: EssentialLinkProps[] = [
+const toolbarLinks: ToolbarListLinkProps[] = [
   {
     title: 'nav.createWord.title',
     caption: 'nav.createWord.caption',
@@ -63,8 +63,8 @@ const localeOptions = reactive([
           {{ $t('nav.title') }}
         </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
+        <ToolbarListLink
+          v-for="link in toolbarLinks"
           :key="link.title"
           v-bind="link"
         />
