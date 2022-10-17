@@ -37,7 +37,8 @@ export default {
     title: 'About',
     text: 'Create words using letters from another word. For example, '
       + 'you can use word "picture" create words "pet", "tip", "pier", "price" but '
-      + 'you can\'t create "cart" because there\'s no "a" in the "picture".',
+      + 'you can\'t create "cart" because there\'s no "a" in the "picture".\n\n'
+      + 'Subagram is built from "subword" and "anagram".',
     create: 'Add a new word',
   },
 }

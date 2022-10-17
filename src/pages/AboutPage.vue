@@ -1,7 +1,15 @@
 <template>
   <q-page padding>
-    <h3>{{ $t('about.title') }}</h3>
-    <h5>{{ $t('about.text') }}</h5>
+    <div class="text-h3 q-mb-md">
+      {{ $t('about.title') }}
+    </div>
+    <p
+      v-for="(text, index) in $t('about.text').split('\n\n')"
+      :key="index"
+      class="text-h5"
+    >
+      {{ text }}
+    </p>
     <q-btn
       size="lg"
       color="secondary"
