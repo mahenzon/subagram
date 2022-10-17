@@ -1,4 +1,5 @@
-# Word in Word (word-in-word)
+# Subagram
+### subagram = subword + anagram
 
 Build words from letters of another word
 

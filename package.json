@@ -1,5 +1,5 @@
 {
-  "name": "word-in-word",
+  "name": "subagram",
   "version": "0.0.1",
   "description": "Build words from letters of another word",
   "productName": "Word in Word",

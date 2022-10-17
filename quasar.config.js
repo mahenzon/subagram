@@ -210,7 +210,7 @@ module.exports = configure((/* ctx */) => ({
     builder: {
       // https://www.electron.build/configuration/configuration
 
-      appId: 'word-in-word',
+      appId: 'subagram',
     },
   },
 
