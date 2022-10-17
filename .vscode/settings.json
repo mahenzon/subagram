@@ -12,5 +12,13 @@
     "typescript",
     "vue"
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "cypress.json"
+      ],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ]
 }
