@@ -1,29 +1,24 @@
 <script setup lang="ts">
+import { WordDetails } from 'stores/words'
+
 export interface WordCardProps {
-  word: string,
-  wordsCount: number,
+  word: WordDetails,
 }
-withDefaults(defineProps<WordCardProps>(), {
-  word: '',
-  wordsCount: 0,
-})
+defineProps<WordCardProps>()
 </script>
 
 <template>
-  <q-card>
+  <q-card
+    class="cursor-pointer"
+    @click="$router.push({ name: 'word-details', params: { word: word.text } })"
+  >
     <q-card-section>
-      <div class="text-h6">
-        {{ word }}
+      <div class="text-h6 text-capitalize">
+        {{ word.text }}
       </div>
       <div class="text-subtitle2">
-        {{ $t('wordCard.foundCount', wordsCount) }}
+        {{ $t('wordCard.foundCount', word.anagrams.length) }}
       </div>
     </q-card-section>
-
-    <q-card-actions>
-      <q-btn flat>
-        {{ $t('wordCard.continue') }}
-      </q-btn>
-    </q-card-actions>
   </q-card>
 </template>

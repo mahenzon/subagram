@@ -4,7 +4,7 @@ export default {
     title: 'Language',
   },
   app: {
-    title: 'Word in word',
+    title: 'Subagram',
   },
   nav: {
     title: 'Actions',
@@ -27,11 +27,29 @@ export default {
   },
   wordsList: {
     continue: 'Continue:',
+    noWords: 'No words yet',
+    createNew: 'Add a new word',
   },
   wordCreate: {
     title: 'Enter a word',
     description: 'The longer the word, the more new words can be formed from its letters.',
     newWordInputLabel: 'New word',
+    suggestedWord: 'Word `{0}` doesn\'t exist yet. Do you want to create it?',
+    inputHint: 'A single word without spaces',
+    required: '* Required',
+    minLength: 'At least 3 characters',
+    create: 'Add word',
+    alreadyExists: 'Such word already exists',
+  },
+  wordDetails: {
+    wordsCount: 'Words found:',
+  },
+  anagramCreate: {
+    alreadyExists: 'Such anagram already exists',
+    minLength: 'Minimum 2 letters',
+    isNotAnagram: 'Not an anagram',
+    inputLabel: 'Add word',
+    inputHint: 'Anagram (minimum 2 letters)',
   },
   about: {
     title: 'About',

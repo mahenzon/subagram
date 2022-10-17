@@ -1,38 +1,29 @@
 <script setup lang="ts">
+import { useQuasar } from 'quasar'
+import { useWordsStore } from 'stores/words'
+import PageUpScroller from 'components/common/PageUpScroller.vue'
+import AddWordFAB from 'components/common/AddWordFAB.vue'
 import WordCard from './WordCard.vue'
 
+const wordsStore = useWordsStore()
+
+const $q = useQuasar()
+
+$q.loadingBar.start()
+$q.loadingBar.stop()
 </script>
 
 <template>
   <div class="q-px-md row items-start q-gutter-md">
     <WordCard
-      v-for="n in 26"
-      :key="n"
+      v-for="word in wordsStore.words"
+      :key="word.text"
       class="col-xs-12 col-md-3"
-      :word="'Hello ' + n"
-      :words-count="n"
+      :word="word"
     />
 
     <!-- Navigation below -->
-    <q-page-sticky
-      position="bottom-right"
-      :offset="[18, 18]"
-    >
-      <q-btn
-        fab
-        :to="{ name: 'create-word' }"
-        size="lg"
-        color="accent"
-        icon="create"
-      />
-    </q-page-sticky>
-
-    <q-page-scroller position="bottom">
-      <q-btn
-        fab
-        icon="keyboard_arrow_up"
-        color="secondary"
-      />
-    </q-page-scroller>
+    <AddWordFAB />
+    <PageUpScroller />
   </div>
 </template>

@@ -4,7 +4,7 @@ export default {
     title: 'Язык',
   },
   app: {
-    title: 'Слово в слове',
+    title: 'Субаграм',
   },
   nav: {
     title: 'Действия',
@@ -27,11 +27,29 @@ export default {
   },
   wordsList: {
     continue: 'Продолжить:',
+    noWords: 'Пока нет ни одного слова',
+    createNew: 'Добавить новое слово',
   },
   wordCreate: {
     title: 'Введите слово',
     description: 'Чем длиннее слово, тем больше новых слов можно составить из его букв.',
     newWordInputLabel: 'Новое слово',
+    suggestedWord: 'Слово `{0}` ещё не создано. Добавить?',
+    inputHint: 'Одно слово, без пробелов',
+    required: '* Введите слово',
+    minLength: 'Минимум 3 буквы',
+    create: 'Добавить слово',
+    alreadyExists: 'Такое слово уже добавлено',
+  },
+  wordDetails: {
+    wordsCount: 'Найдено слов:',
+  },
+  anagramCreate: {
+    alreadyExists: 'Такая анаграмма уже добавлена',
+    minLength: 'Минимум 2 буквы',
+    isNotAnagram: 'Не анаграмма',
+    inputLabel: 'Добавить слово',
+    inputHint: 'Анаграмма, минимум 2 буквы',
   },
   about: {
     title: 'Описание',
