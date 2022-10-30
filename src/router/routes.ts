@@ -5,6 +5,7 @@ import IndexPage from 'pages/IndexPage.vue'
 import WordDetails from 'pages/WordDetails.vue'
 
 import { useWordsStore } from 'stores/words'
+import { wordsCrud } from 'src/crud'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -36,10 +37,17 @@ const routes: RouteRecordRaw[] = [
             beforeEnter(to, from, next) {
               const wordsStore = useWordsStore()
 
-              if (wordsStore.words[to.params.word as string]) {
+              const word = to.params.word as string
+              if (wordsStore.words[word]) {
                 next()
               } else {
-                next({ name: 'create-word', query: { word: to.params.word } })
+                wordsCrud.wordExists(word).then((exists) => {
+                  if (exists) {
+                    next()
+                  } else {
+                    next({ name: 'create-word', query: { word } })
+                  }
+                })
               }
             },
           },
