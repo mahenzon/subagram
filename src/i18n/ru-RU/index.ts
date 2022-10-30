@@ -43,10 +43,13 @@ export default {
   },
   wordDetails: {
     wordsCount: 'Найдено слов:',
+    anagramDeleted: 'Анаграма {word} удалена',
+    anagramDeletedUndo: 'Отменить',
   },
   anagramCreate: {
     alreadyExists: 'Такая анаграмма уже добавлена',
     minLength: 'Минимум 2 буквы',
+    isSameWord: 'Это исходное слово',
     isNotAnagram: 'Не анаграмма',
     inputLabel: 'Добавить слово',
     inputHint: 'Анаграмма, минимум 2 буквы',

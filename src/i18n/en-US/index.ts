@@ -43,10 +43,13 @@ export default {
   },
   wordDetails: {
     wordsCount: 'Words found:',
+    anagramDeleted: 'Deleted anagram {word}',
+    anagramDeletedUndo: 'Undo',
   },
   anagramCreate: {
     alreadyExists: 'Such anagram already exists',
     minLength: 'Minimum 2 letters',
+    isSameWord: 'Is same word',
     isNotAnagram: 'Not an anagram',
     inputLabel: 'Add word',
     inputHint: 'Anagram (minimum 2 letters)',
