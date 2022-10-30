@@ -26,6 +26,7 @@ export default boot(({ app }) => {
     // locale: 'en-US',
     locale: 'ru-RU',
     legacy: false,
+    allowComposition: true,
     globalInjection: true,
     messages,
     pluralRules: {
