@@ -69,7 +69,7 @@ module.exports = configure((/* ctx */) => ({
 
     // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-    // publicPath: '/',
+    publicPath: 'subagram/',
     // analyze: true,
     // env: {},
     // rawDefine: {}
