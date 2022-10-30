@@ -8,6 +8,12 @@ export interface WordCardProps {
 
 defineProps<WordCardProps>()
 
+interface IEmits {
+  // eslint-disable-next-line no-unused-vars
+  (e: 'delete', word: WordDetails): void,
+}
+const emit = defineEmits<IEmits>()
+
 const pushPinIcon = ref('push_pin')
 // const pushPinIcon = ref('o_push_pin')
 </script>
@@ -51,7 +57,7 @@ const pushPinIcon = ref('push_pin')
         flat
         color="red"
         icon="delete"
-        @click="$q.notify('TODO delete')"
+        @click="emit('delete', word)"
       />
     </q-card-section>
   </q-card>

@@ -30,6 +30,11 @@ export default {
     noWords: 'No words yet',
     createNew: 'Add a new word',
   },
+  wordConfirmDelete: {
+    q: 'Are you sure you want to delete word \'{word}\' with all anagrams?',
+    cancel: 'Cancel',
+    confirm: 'Delete',
+  },
   wordCreate: {
     title: 'Enter a word',
     description: 'The longer the word, the more new words can be formed from its letters.',

@@ -61,6 +61,9 @@ export const useWordsStore = defineStore('words', {
       }
       word.anagrams = word.anagrams.filter((s) => s.text !== anagramText)
     },
+    removeWord(wordDetails: WordDetails) {
+      delete this.words[wordDetails.text]
+    },
     findAnagram(wordDetails: WordDetails, anagramText: string): Anagram | undefined {
       const word = this.words[wordDetails.text]
       if (!word) {

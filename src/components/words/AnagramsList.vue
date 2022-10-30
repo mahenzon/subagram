@@ -24,7 +24,7 @@ const sortedAnagrams = computed(() => {
 })
 
 function deleteAnagram(anagram: Anagram) {
-  wordsCrud.removeAnagram(props.word, anagram)
+  wordsCrud.deleteAnagram(props.word, anagram)
   $q.notify({
     message: t('wordDetails.anagramDeleted', { word: anagram.text }),
     actions: [

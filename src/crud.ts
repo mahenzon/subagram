@@ -75,11 +75,18 @@ export class WordsCRUD {
     }
   }
 
-  async removeAnagram(word: WordDetails, anagram: Anagram) {
+  async deleteAnagram(word: WordDetails, anagram: Anagram) {
     const wordsStore = useWordsStore()
 
     wordsStore.removeAnagram(word, anagram.text)
     await this.db.deleteAnagram(anagram.id)
+  }
+
+  async deleteWord(word: WordDetails) {
+    const wordsStore = useWordsStore()
+    wordsStore.removeWord(word)
+    await this.db.words.delete(word.id)
+    await this.db.anagrams.where('wordId').equals(word.id).delete()
   }
 }
 
