@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies 🔧
         run: |
-          yarn add @quasar/cli@1.1.3
+          yarn global add @quasar/cli
           yarn install --production=false --frozen-lockfile
 
       - name: Run tests 👨‍💻
@@ -32,6 +32,8 @@ jobs:
 
       - name: Build app 🔨
         run: |
+          ls -la
+          ls -la node_modules
           quasar build -m pwa
 
       - name: Deploy 🚀
