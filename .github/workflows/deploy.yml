@@ -17,6 +17,7 @@ jobs:
 
       - name: Install dependencies 🔧
         run: |
+          yarn global add @quasar/cli
           yarn install --frozen-lockfile
 
       - name: Run tests 👨‍💻
