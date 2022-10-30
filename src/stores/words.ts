@@ -1,17 +1,14 @@
 import { defineStore } from 'pinia'
-
-export interface Anagram {
-  text: string,
-}
-
-export interface WordDetails {
-  text: string,
-  anagrams: Anagram[],
-}
+import {
+  Anagram,
+  AnagramFromDB,
+  WordDetails,
+  WordDetailsDB,
+} from 'src/interfaces'
 
 export const useWordsStore = defineStore('words', {
   state: () => ({
-    words: {} as ({ [wordText: string]: WordDetails}),
+    words: {} as ({ [wordText: string]: WordDetails }),
   }),
 
   getters: {
@@ -20,19 +17,42 @@ export const useWordsStore = defineStore('words', {
   },
 
   actions: {
-    addWord(wordText: string) {
+    addAllWords(words: WordDetailsDB[]) {
+      words.forEach((dbWord) => {
+        this.words[dbWord.text] = {
+          id: dbWord.id as number,
+          text: dbWord.text,
+          anagrams: [],
+        }
+      })
+    },
+    addWord(wordId: number, wordText: string) {
       this.words[wordText] = {
+        id: wordId,
         text: wordText,
-        anagrams: [
-        ],
+        anagrams: [],
       }
     },
-    addAnagram(wordText: string, anagramText: string) {
-      const word = this.words[wordText]
+    addAnagram(
+      wordDetails: WordDetails,
+      anagramId: number,
+      anagramText: string,
+    ) {
+      const word = this.words[wordDetails.text]
       if (!word) {
         return
       }
-      word.anagrams.push({ text: anagramText })
+      word.anagrams.push({ id: anagramId, text: anagramText })
+    },
+    addAnagrams(
+      wordDetails: WordDetails,
+      anagrams: AnagramFromDB[],
+    ) {
+      const word = this.words[wordDetails.text]
+      if (!word) {
+        return
+      }
+      word.anagrams.push(...anagrams)
     },
     removeAnagram(wordDetails: WordDetails, anagramText: string) {
       const word = this.words[wordDetails.text]
