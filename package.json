@@ -2,7 +2,7 @@
   "name": "subagram",
   "version": "0.0.1",
   "description": "Build words from letters of another word",
-  "productName": "Word in Word",
+  "productName": "Subagram",
   "author": "Suren Khorenyan <surenkhorenyan@gmail.com>",
   "private": true,
   "scripts": {
