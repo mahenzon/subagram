@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { useWordsStore, WordDetails } from 'stores/words'
 import { useQuasar } from 'quasar'
+import { Anagram, WordDetails } from 'src/interfaces'
+import { wordsCrud } from 'src/crud'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
+import { useWordsStore } from 'stores/words'
 import AnagramItem from './AnagramItem.vue'
 
 export interface IAnagramListProps {
@@ -9,17 +13,25 @@ export interface IAnagramListProps {
 
 const $q = useQuasar()
 const props = defineProps<IAnagramListProps>()
-
+const { t } = useI18n({ useScope: 'global' })
 const wordsStore = useWordsStore()
-function deleteSubword(subwordText: string) {
-  wordsStore.removeAnagram(props.word, subwordText)
+
+const sortedAnagrams = computed(() => {
+  const word = wordsStore.words[props.word.text]
+  return word.anagrams.sort(
+    (a, b) => a.text.localeCompare(b.text),
+  )
+})
+
+function deleteAnagram(anagram: Anagram) {
+  wordsCrud.removeAnagram(props.word, anagram)
   $q.notify({
-    message: `Deleted word '${subwordText}'`,
+    message: t('wordDetails.anagramDeleted', { word: anagram.text }),
     actions: [
       {
-        label: 'Undo',
-        handler() {
-          wordsStore.addAnagram(props.word.text, subwordText)
+        label: t('wordDetails.anagramDeletedUndo'),
+        async handler() {
+          await wordsCrud.addAnagramToWord(props.word, anagram.text)
         },
       },
     ],
@@ -36,10 +48,10 @@ function deleteSubword(subwordText: string) {
     separator
   >
     <AnagramItem
-      v-for="(anagramWord, index) in word.anagrams"
+      v-for="(anagram, index) in sortedAnagrams"
       :key="index"
-      :word="anagramWord"
-      @delete="deleteSubword"
+      :anagram="anagram"
+      @delete="deleteAnagram"
     />
   </q-list>
 </template>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { Anagram } from 'stores/words'
+import { Anagram } from 'src/interfaces'
 
-export interface ISubwordItem {
-  word: Anagram,
+export interface IAnagramItemProps {
+  anagram: Anagram,
 }
 
-defineProps<ISubwordItem>()
+defineProps<IAnagramItemProps>()
 
 interface IEmits {
   // eslint-disable-next-line no-unused-vars
-  (e: 'delete', subwordText: string): void,
+  (e: 'delete', anagram: Anagram): void,
 }
 const emit = defineEmits<IEmits>()
 </script>
@@ -22,15 +22,16 @@ const emit = defineEmits<IEmits>()
       <q-item-label
         class="text-bold text-lowercase"
       >
-        {{ word.text }}
+        {{ anagram.text }}
       </q-item-label>
     </q-item-section>
     <q-item-section side>
       <q-btn
+        flat
         dense
         color="red"
         icon="delete"
-        @click="emit('delete', word.text)"
+        @click="emit('delete', anagram)"
       />
     </q-item-section>
   </q-item>

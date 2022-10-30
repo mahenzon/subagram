@@ -1,23 +1,26 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { QInput } from 'quasar'
+import { wordsCrud } from 'src/crud'
 import { useWordsStore } from 'stores/words'
 
+const wordsStore = useWordsStore()
 const route = useRoute()
 const router = useRouter()
-const wordsStore = useWordsStore()
 
 const suggestedWord = computed(() => route.query.word as string | undefined)
 const word = ref<string>(suggestedWord.value ?? '')
 const wordRef = ref(null)
 
-function onWordCreateClicked() {
-  const canProceed = wordRef.value && wordRef.value.validate()
+async function onWordCreateClicked() {
+  const inputRef: QInput = wordRef.value
+  const canProceed = inputRef.validate()
   if (!canProceed) {
     return
   }
-  wordsStore.addWord(word.value)
-  router.push({ name: 'word-details', params: { word: word.value } })
+  const wordText = await wordsCrud.createWord(word.value)
+  await router.push({ name: 'word-details', params: { word: wordText } })
 }
 </script>
 
